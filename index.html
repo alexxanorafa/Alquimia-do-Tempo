@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alquimia do Tempo - Observatório Holístico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+      <div class="menu-icon" id="menuIcon">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav class="menu" id="menu">
+        <ul>
+          <!-- Cada item de menu dentro de <li> -->
+            <li><a href="https://alexxanorafa.github.io/ecosystem/" class="menu-item">ECOSYSTEM</a></li>                  
+      </ul>
+      </nav>
+  </header>
+
+  <div class="app-wrapper">
+    <aside class="side-bar">
+      <svg class="clock-svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" class="face"/>
+        <line id="h-left" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
+        <line id="m-left" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+      </svg>
+    </aside>
+
+    <main class="content-panel">
+      <h1 class="logo" style="font-size: 1.2rem; color: var(--primary); opacity: 0.7;">Alquimia dos Sentimentos</h1>
+      <div id="digital-clock" class="digital">00:00:00</div>
+      <div id="vibration-tag" class="vibration-badge">Vibração: --</div>
+
+      <section class="poetry-container">
+        <p id="poetic-verse">"O tempo é a substância de que sou feito."</p>
+        <cite id="author" style="font-size: 0.9rem; display: block; margin-top: 10px;">— Jorge Luis Borges</cite>
+      </section>
+
+      <div class="knowledge-grid">
+        <div class="card">
+          <label>Ciência & Psicologia</label>
+          <p id="science-text" style="font-size: 0.95rem;">Analisando...</p>
+        </div>
+        <div class="card">
+          <label>Algoritmo Gramatical</label>
+          <p id="grammar-text" style="font-size: 0.95rem;">Sincronizando...</p>
+        </div>
+        <div class="card full">
+          <label>Pedagogia do Instante</label>
+          <p id="pedagogy-text" style="font-size: 0.95rem;">Explicação da frequência.</p>
+        </div>
+      </div>
+    </main>
+
+    <aside class="side-bar">
+      <svg class="clock-svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" class="face"/>
+        <line id="h-right" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
+        <line id="m-right" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+      </svg>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
