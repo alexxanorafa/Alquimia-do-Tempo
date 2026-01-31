@@ -1,90 +1,149 @@
 :root {
-  --primary: #6c5b7b;
-  --secondary: #e6a4b4;
-  --accent: #f7d6d0;
-  --bg: #f8f1f8;
-  --text: #4a3f5c;
-  --glass: rgba(255, 255, 255, 0.85);
+  --primary: #4a3f5c;   /* Roxo Profundo */
+  --secondary: #b388eb; /* Lilás Elétrico */
+  --accent: #f8f1f8;    /* Fundo Base */
+  --glass: rgba(255, 255, 255, 0.75);
+  --text-main: #2d2d2d;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  /* Variáveis Dinâmicas (mudam via JS) */
+  --dynamic-bg: #e0eafc; 
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.4s ease; }
 
 body {
-  font-family: 'Times New Roman', serif;
-  background-color: var(--accent);
-  color: var(--text);
+  font-family: var(--font-serif);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--dynamic-bg) 100%);
+  color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
 }
-
-/* ========== MENU & HEADER ========== */
-header {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 60px;
-  display: flex; align-items: center; justify-content: flex-end;
-  padding: 0 30px; z-index: 2000;
-}
-
-.menu-icon {
-  width: 30px; height: 20px; cursor: pointer;
-  display: flex; flex-direction: column; justify-content: space-between;
-}
-.menu-icon span { width: 100%; height: 3px; background: var(--primary); border-radius: 3px; }
-
-.menu {
-  position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
-  background: var(--secondary); padding: 80px 20px;
-  transition: 0.5s; z-index: 1500;
-}
-.menu.active { right: 0; }
-.menu ul { list-style: none; overflow-y: auto; height: 80%; }
-.menu-item { color: white; text-decoration: none; display: block; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); }
 
 /* ========== LAYOUT ========== */
 .app-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px; /* Espaço para o menu */
+  padding-top: 60px;
   min-height: 100vh;
   width: 100%;
 }
 
-.side-bar { flex: 1; max-width: 180px; display: flex; justify-content: center; }
+.side-bar { flex: 1; max-width: 150px; display: flex; justify-content: center; opacity: 0.8; }
+/* Oculta relógios laterais em mobile */
+@media (max-width: 768px) { .side-bar { display: none; } }
 
 .content-panel {
   flex: 3;
   max-width: 800px;
+  margin: 0 20px;
   background: var(--glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   padding: 40px;
-  border-radius: 40px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
   text-align: center;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
-.digital { font-size: clamp(2.5rem, 8vw, 5rem); font-family: monospace; color: var(--primary); }
+/* ========== TYPOGRAPHY & ELEMENTS ========== */
+.logo { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; opacity: 0.6; }
+
+.digital { 
+  font-family: var(--font-mono); 
+  font-size: clamp(3rem, 10vw, 6rem); 
+  color: var(--primary); 
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+/* Input de Viagem no Tempo */
+.time-controls input {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 5px;
+  font-family: var(--font-mono);
+  color: var(--primary);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.time-controls input:hover { background: rgba(255,255,255,0.5); }
 
 .vibration-badge {
-  background: var(--secondary); color: white;
-  padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; margin: 20px 0;
+  font-family: var(--font-mono);
+  background: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
   display: inline-block;
+  box-shadow: 0 5px 15px rgba(74, 63, 92, 0.3);
 }
 
+/* Poesia */
+.poetry-container { margin-bottom: 40px; }
+#poetic-verse { 
+  font-size: 1.8rem; 
+  line-height: 1.3; 
+  font-style: italic; 
+  color: #1a1a1a;
+}
+#author { 
+  font-family: var(--font-mono); 
+  font-size: 0.8rem; 
+  margin-top: 15px; 
+  color: var(--secondary); 
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+}
+
+/* Grid de Conhecimento */
 .knowledge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; margin-top: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+.card {
+  background: rgba(255,255,255,0.6);
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 3px solid var(--secondary);
+}
+.card.full { grid-column: 1 / -1; border-left-color: var(--primary); }
+.card label { 
+  display: block; 
+  font-family: var(--font-mono); 
+  font-size: 0.7rem; 
+  text-transform: uppercase; 
+  color: var(--primary); 
+  margin-bottom: 8px; 
+  opacity: 0.7;
+}
+.card p { font-size: 1.1rem; line-height: 1.4; }
+
+@media (max-width: 600px) {
+  .knowledge-grid { grid-template-columns: 1fr; }
 }
 
-.card { background: white; padding: 15px; border-radius: 15px; text-align: left; }
-.card.full { grid-column: 1 / -1; }
-.card label { font-size: 0.7rem; color: var(--secondary); font-weight: bold; text-transform: uppercase; }
+/* Relógios SVG */
+.clock-svg { width: 100%; height: auto; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); }
+.face { fill: none; stroke: var(--primary); stroke-width: 2; opacity: 0.2; }
+.hand { stroke: var(--primary); stroke-width: 3; stroke-linecap: round; transform-origin: 50px 50px; }
+.min { stroke: var(--secondary); stroke-width: 2; }
+.pivot { fill: var(--primary); }
 
-/* RELÓGIOS */
-.clock-svg { width: 150px; stroke: var(--primary); fill: none; }
-.hand { transform-origin: 50px 50px; transition: transform 0.5s; }
-
-@media (max-width: 900px) {
-  .side-bar { display: none; }
-  .app-wrapper { padding: 80px 20px 20px; }
-}
+/* Menu */
+.menu-icon { position: fixed; top: 20px; right: 20px; z-index: 100; cursor: pointer; }
+.menu-icon span { display: block; width: 30px; height: 3px; background: var(--primary); margin: 5px 0; border-radius: 3px; }
+.menu { position: fixed; top: 0; right: -250px; width: 250px; height: 100%; background: white; z-index: 99; padding-top: 80px; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+.menu.active { right: 0; }
+.menu ul { list-style: none; padding: 20px; }
+.menu a { text-decoration: none; color: var(--primary); font-family: var(--font-mono); font-size: 1.2rem; display: block; margin-bottom: 20px; }

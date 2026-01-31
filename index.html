@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alquimia do Tempo - Observatório Holístico</title>
+  <title>Alquimia do Tempo - Deep Mind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+  <header>
       <div class="menu-icon" id="menuIcon">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
       </div>
       <nav class="menu" id="menu">
         <ul>
-          <!-- Cada item de menu dentro de <li> -->
-            <li><a href="https://alexxanorafa.github.io/ecosystem/" class="menu-item">ECOSYSTEM</a></li>                  
-      </ul>
+            <li><a href="#" id="reset-time">Tempo Real</a></li>
+            <li><a href="https://alexxanorafa.github.io/ecosystem/" class="menu-item">Ecosystem</a></li>                  
+        </ul>
       </nav>
   </header>
 
@@ -28,31 +29,37 @@
         <circle cx="50" cy="50" r="45" class="face"/>
         <line id="h-left" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
         <line id="m-left" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+        <circle cx="50" cy="50" r="2" class="pivot"/>
       </svg>
     </aside>
 
     <main class="content-panel">
-      <h1 class="logo" style="font-size: 1.2rem; color: var(--primary); opacity: 0.7;">Alquimia do Tempo</h1>
+      <h1 class="logo">Alquimia do Tempo</h1>
+      
+      <div class="time-controls">
+        <input type="time" id="time-travel" title="Consultar outra frequência">
+      </div>
+
       <div id="digital-clock" class="digital">00:00:00</div>
-      <div id="vibration-tag" class="vibration-badge">Vibração: --</div>
+      <div id="vibration-tag" class="vibration-badge">Sincronizando...</div>
 
       <section class="poetry-container">
         <p id="poetic-verse">"O tempo é a substância de que sou feito."</p>
-        <cite id="author" style="font-size: 0.9rem; display: block; margin-top: 10px;">— Jorge Luis Borges</cite>
+        <cite id="author">— Jorge Luis Borges</cite>
       </section>
 
       <div class="knowledge-grid">
         <div class="card">
-          <label>Ciência & Psicologia</label>
-          <p id="science-text" style="font-size: 0.95rem;">Analisando...</p>
+          <label>Ciência & Psique</label>
+          <p id="science-text">Analisando...</p>
         </div>
         <div class="card">
           <label>Algoritmo Gramatical</label>
-          <p id="grammar-text" style="font-size: 0.95rem;">Sincronizando...</p>
+          <p id="grammar-text">Sincronizando...</p>
         </div>
         <div class="card full">
           <label>Pedagogia do Instante</label>
-          <p id="pedagogy-text" style="font-size: 0.95rem;">Explicação da frequência.</p>
+          <p id="pedagogy-text">...</p>
         </div>
       </div>
     </main>
@@ -62,11 +69,11 @@
         <circle cx="50" cy="50" r="45" class="face"/>
         <line id="h-right" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
         <line id="m-right" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+        <circle cx="50" cy="50" r="2" class="pivot"/>
       </svg>
     </aside>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
