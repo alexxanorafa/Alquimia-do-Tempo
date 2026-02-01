@@ -1,22 +1,3 @@
-// ============ SISTEMA DE MENU ============
-const menuIcon = document.getElementById("menuIcon");
-const menu = document.getElementById("menu");
-
-if (menuIcon && menu) {
-    menuIcon.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("active");
-        menuIcon.classList.toggle("active");
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
-            menu.classList.remove("active");
-            menuIcon.classList.remove("active");
-        }
-    });
-}
-
 // ============ PALETA DE CORES DINÂMICA (AURA) ============
 const colorPalettes = {
     0: "#cfd9df", // Cinza Névoa (Vazio)
@@ -34,7 +15,6 @@ const colorPalettes = {
     33: "#a8edea"  // Cristalino
 };
 
-// ============ MOTOR DE ALQUIMIA DO TEMPO ============
 // ============ MOTOR DE ALQUIMIA DO TEMPO (VERSÃO DEEP MIND) ============
 const Engine = {
     // Banco de dados expandido com rotação de conteúdo para maior diversidade
@@ -230,7 +210,7 @@ const Engine = {
 
 // Event Listeners para Viagem no Tempo
 const timeInput = document.getElementById("time-travel");
-const resetBtn = document.getElementById("reset-time");
+const resetClock = document.getElementById("reset-clock");
 
 if(timeInput) {
     timeInput.addEventListener("input", (e) => {
@@ -240,13 +220,13 @@ if(timeInput) {
     });
 }
 
-if(resetBtn) {
-    resetBtn.addEventListener("click", (e) => {
+if(resetClock) {
+    resetClock.addEventListener("click", (e) => {
         e.preventDefault();
         Engine.manualMode = false;
         if(timeInput) timeInput.value = "";
     });
 }
 
-// Inicializa (lembre-se de preencher o DATA completo!)
+// Inicializa
 Engine.update();

@@ -11,26 +11,16 @@
 </head>
 <body>
 
-  <header>
-      <div class="menu-icon" id="menuIcon">
-          <span></span><span></span><span></span>
-      </div>
-      <nav class="menu" id="menu">
-        <ul>
-            <li><a href="#" id="reset-time">Tempo Real</a></li>
-            <li><a href="https://alexxanorafa.github.io/ecosystem/" class="menu-item">Ecosystem</a></li>                  
-        </ul>
-      </nav>
-  </header>
-
   <div class="app-wrapper">
     <aside class="side-bar">
-      <svg class="clock-svg" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" class="face"/>
-        <line id="h-left" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
-        <line id="m-left" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
-        <circle cx="50" cy="50" r="2" class="pivot"/>
-      </svg>
+      <a href="https://alexxanorafa.github.io/ecosystem/" class="clock-link">
+        <svg class="clock-svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" class="face"/>
+          <line id="h-left" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
+          <line id="m-left" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+          <circle cx="50" cy="50" r="2" class="pivot"/>
+        </svg>
+      </a>
     </aside>
 
     <main class="content-panel">
@@ -65,12 +55,14 @@
     </main>
 
     <aside class="side-bar">
-      <svg class="clock-svg" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" class="face"/>
-        <line id="h-right" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
-        <line id="m-right" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
-        <circle cx="50" cy="50" r="2" class="pivot"/>
-      </svg>
+      <a href="#" id="reset-clock" class="clock-link">
+        <svg class="clock-svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" class="face"/>
+          <line id="h-right" x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
+          <line id="m-right" x1="50" y1="50" x2="50" y2="20" class="hand min"/>
+          <circle cx="50" cy="50" r="2" class="pivot"/>
+        </svg>
+      </a>
     </aside>
   </div>
 

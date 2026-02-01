@@ -26,12 +26,38 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
   min-height: 100vh;
   width: 100%;
 }
 
-.side-bar { flex: 1; max-width: 150px; display: flex; justify-content: center; opacity: 0.8; }
+.side-bar { 
+  flex: 1; 
+  max-width: 150px; 
+  display: flex; 
+  justify-content: center; 
+  opacity: 0.8; 
+}
+
+.clock-link {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.clock-link:hover .clock-svg {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.clock-link:hover .face {
+  stroke-width: 3;
+}
+
+.clock-link:hover .hand {
+  stroke-width: 4;
+}
+
 /* Oculta relógios laterais em mobile */
 @media (max-width: 768px) { .side-bar { display: none; } }
 
@@ -134,16 +160,13 @@ body {
 }
 
 /* Relógios SVG */
-.clock-svg { width: 100%; height: auto; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); }
-.face { fill: none; stroke: var(--primary); stroke-width: 2; opacity: 0.2; }
-.hand { stroke: var(--primary); stroke-width: 3; stroke-linecap: round; transform-origin: 50px 50px; }
+.clock-svg { 
+  width: 100%; 
+  height: auto; 
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); 
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.face { fill: none; stroke: var(--primary); stroke-width: 2; opacity: 0.2; transition: stroke-width 0.3s ease; }
+.hand { stroke: var(--primary); stroke-width: 3; stroke-linecap: round; transform-origin: 50px 50px; transition: stroke-width 0.3s ease; }
 .min { stroke: var(--secondary); stroke-width: 2; }
 .pivot { fill: var(--primary); }
-
-/* Menu */
-.menu-icon { position: fixed; top: 20px; right: 20px; z-index: 100; cursor: pointer; }
-.menu-icon span { display: block; width: 30px; height: 3px; background: var(--primary); margin: 5px 0; border-radius: 3px; }
-.menu { position: fixed; top: 0; right: -250px; width: 250px; height: 100%; background: white; z-index: 99; padding-top: 80px; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
-.menu.active { right: 0; }
-.menu ul { list-style: none; padding: 20px; }
-.menu a { text-decoration: none; color: var(--primary); font-family: var(--font-mono); font-size: 1.2rem; display: block; margin-bottom: 20px; }
